@@ -1,18 +1,14 @@
-name: Deploy to GitHub Pages
+name: Deploy Vite app to GitHub Pages
 
 on:
   push:
     branches:
-      - main   # chạy khi push vào nhánh main
+      - main
 
 permissions:
   contents: read
   pages: write
   id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
 
 jobs:
   build:
@@ -25,7 +21,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: npm
 
       - name: Install dependencies
         run: npm install
@@ -33,10 +28,10 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Upload production-ready files
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist  # thư mục build của Vite
+          path: ./dist
 
   deploy:
     needs: build
