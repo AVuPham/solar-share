@@ -3,7 +3,7 @@ name: Deploy Vite app to GitHub Pages
 on:
   push:
     branches:
-      - main   # chạy khi bạn push code vào nhánh main
+      - main
 
 permissions:
   contents: read
@@ -25,7 +25,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: npm
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm install
@@ -33,10 +33,13 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Show dist contents (debug)
+        run: ls -la ./dist || echo "dist folder not found"
+
       - name: Upload build output
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist   # thư mục build của Vite
+          path: ./dist
 
   deploy:
     needs: build
@@ -45,6 +48,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
