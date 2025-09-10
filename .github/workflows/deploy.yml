@@ -17,19 +17,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Use Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
-      - name: Build
+      - name: Build project
         run: npm run build
 
-      - name: Upload artifact for pages
-        uses: actions/upload-pages-artifact@v1
+      - name: Upload production-ready files
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
@@ -40,6 +40,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
