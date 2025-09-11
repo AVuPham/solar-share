@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main   # Chạy khi push vào nhánh main
+      - main   # Chỉ chạy khi push vào nhánh main
 
 permissions:
   contents: read
