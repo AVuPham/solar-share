@@ -1,17 +1,38 @@
 import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
+
+// Import các page chính
 import Home from './pages/Home'
 import About from './pages/About'
-import Technology from './pages/Technology'
-import Impact from './pages/Impact'
+import Projects from './pages/Projects'
+import Dashboard from './pages/Dashboard'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
 
 export const router = createBrowserRouter([
-  { path: '/', element: <Home /> },
-  { path: '/about', element: <About /> },
-  { path: '/technology', element: <Technology /> },
-  { path: '/impact', element: <Impact /> },
-  { path: '/contact', element: <Contact /> },
-  { path: '*', element: <NotFound /> }, // 👈 route không tồn tại → show NotFound.tsx
+  {
+    path: '/',
+    element: <Home />,
+    errorElement: <NotFound />  // Khi route không khớp -> hiện NotFound
+  },
+  {
+    path: '/about',
+    element: <About />
+  },
+  {
+    path: '/projects',
+    element: <Projects />
+  },
+  {
+    path: '/dashboard',
+    element: <Dashboard />
+  },
+  {
+    path: '/contact',
+    element: <Contact />
+  },
+  {
+    path: '*',
+    element: <NotFound />
+  }
 ])
