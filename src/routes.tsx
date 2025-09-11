@@ -1,7 +1,7 @@
 import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 
-// Import các page
+// Import các page chính
 import Home from './pages/Home'
 import About from './pages/About'
 import Projects from './pages/Projects'

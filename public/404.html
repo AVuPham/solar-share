@@ -1,21 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0; url=./index.html" />
-    <title>Redirecting…</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Trang không tồn tại</title>
     <script>
-      (function() {
-        var redirectTo = window.location.pathname;
-        if (redirectTo.startsWith('/solar-share')) {
-          redirectTo = redirectTo.replace('/solar-share', '');
-        }
-        sessionStorage.setItem('redirect', redirectTo);
-        window.location.replace('/solar-share/');
-      })();
+      const redirect = sessionStorage.getItem("redirect")
+      if (!redirect) {
+        const currentUrl = window.location.pathname
+        sessionStorage.setItem("redirect", currentUrl)
+        window.location.replace("/")
+      }
     </script>
   </head>
   <body>
-    <p>Redirecting…</p>
+    <h1 style="text-align:center; margin-top:20%;">Đang chuyển hướng...</h1>
   </body>
 </html>
