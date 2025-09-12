@@ -2,18 +2,14 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>404 - Trang không tồn tại</title>
+    <meta http-equiv="refresh" content="0; url=/" />
     <script>
-      const redirect = sessionStorage.getItem("redirect")
-      if (!redirect) {
-        const currentUrl = window.location.pathname
-        sessionStorage.setItem("redirect", currentUrl)
-        window.location.replace("/")
-      }
+      // Giữ lại URL gốc rồi chuyển hướng về index.html
+      sessionStorage.setItem("redirect", location.pathname);
+      window.location.href = "/";
     </script>
   </head>
   <body>
-    <h1 style="text-align:center; margin-top:20%;">Đang chuyển hướng...</h1>
+    <h1>Đang chuyển hướng...</h1>
   </body>
 </html>
