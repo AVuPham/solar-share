@@ -7,17 +7,15 @@ export default function Navbar() {
   const links = [
     { path: '/', label: 'Trang chủ' },
     { path: '/about', label: 'Giới thiệu' },
-    { path: '/projects', label: 'Công nghệ' },
+    { path: '/technology', label: 'Công nghệ' },
+    { path: '/projects', label: 'Dự án' },
     { path: '/dashboard', label: 'Dashboard' },
     { path: '/contact', label: 'Liên hệ' },
   ]
 
   return (
     <nav className="container mx-auto flex justify-between items-center px-6 py-4">
-      {/* Logo */}
       <h1 className="text-xl font-bold">Solar Share</h1>
-
-      {/* Menu */}
       <div className="space-x-6">
         {links.map(link => (
           <Link
