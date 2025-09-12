@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/solar-share/', // 👈 Quan trọng: trỏ đúng tên repo trên GitHub
+  base: '/solar-share/', // 👈 Trùng với tên repo
   build: {
     outDir: 'dist',
   },

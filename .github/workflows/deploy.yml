@@ -3,7 +3,7 @@ name: Deploy Solar Share to GitHub Pages
 on:
   push:
     branches:
-      - main  # chạy workflow khi push vào nhánh main
+      - main  # chạy khi push lên nhánh main
 
 permissions:
   contents: read

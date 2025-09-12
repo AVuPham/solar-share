@@ -21,7 +21,7 @@ export default function AppRoutes() {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/contact" element={<Contact />} />
 
-      {/* Mặc định: redirect về Home khi gặp link lạ */}
+      {/* Redirect tất cả URL lạ về Home */}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   )
