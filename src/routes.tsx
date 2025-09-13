@@ -1,26 +1,30 @@
-import React from 'react'
-import { createBrowserRouter } from 'react-router-dom'
-import Layout from './components/Layout'
-import Home from './pages/Home'
-import About from './pages/About'
-import Technology from './pages/Technology'
-import Projects from './pages/Projects'
-import Dashboard from './pages/Dashboard'
-import Contact from './pages/Contact'
-import NotFound from './pages/NotFound'
+// src/routes.tsx
+import React from "react";
+import { createBrowserRouter } from "react-router-dom";
+import Layout from "./components/Layout";   // File Layout
 
-export const router = createBrowserRouter([
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Technology from "./pages/Technology";
+import Projects from "./pages/Projects";
+import Dashboard from "./pages/Dashboard";
+import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
+
+const router = createBrowserRouter([
   {
-    path: '/',
-    element: <Layout />,
+    path: "/",
+    element: <Layout />,   // ✅ Layout bao ngoài
     children: [
-      { index: true, element: <Home /> },
-      { path: 'about', element: <About /> },
-      { path: 'technology', element: <Technology /> },
-      { path: 'projects', element: <Projects /> },
-      { path: 'dashboard', element: <Dashboard /> },
-      { path: 'contact', element: <Contact /> },
-      { path: '*', element: <NotFound /> },
+      { path: "/", element: <Home /> },
+      { path: "/about", element: <About /> },
+      { path: "/technology", element: <Technology /> },
+      { path: "/projects", element: <Projects /> },
+      { path: "/dashboard", element: <Dashboard /> },
+      { path: "/contact", element: <Contact /> },
+      { path: "*", element: <NotFound /> }, // ✅ fallback 404
     ],
   },
-])
+]);
+
+export default router;
