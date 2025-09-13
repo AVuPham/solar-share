@@ -1,6 +1,19 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  theme: { extend: {} },
+module.exports = {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}", // scan toàn bộ source code
+  ],
+  theme: {
+    extend: {
+      colors: {
+        solar: {
+          yellow: "#FFD700",
+          sky: "#00BFFF",
+          green: "#32CD32",
+        },
+      },
+    },
+  },
   plugins: [],
-}
+};
