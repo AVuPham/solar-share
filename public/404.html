@@ -2,21 +2,17 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <!-- Redirect về index.html khi 404 -->
-    <meta http-equiv="refresh" content="0; url=/solar-share/" />
-    <title>Solar Share - Redirecting...</title>
-    <script>
-      // Dự phòng nếu meta refresh không chạy
-      var redirectTo = "/solar-share/";
-      if (window.location.pathname !== redirectTo) {
-        window.location.replace(redirectTo);
-      }
+    <meta http-equiv="refresh" content="0; url=/" />
+    <title>Solar Share - 404</title>
+    <script type="text/javascript">
+      // Lấy đường dẫn hiện tại
+      const redirectTo = window.location.pathname + window.location.search + window.location.hash;
+      sessionStorage.setItem("redirect", redirectTo);
+      // Quay về index.html
+      window.location.href = "/";
     </script>
   </head>
   <body>
-    <p>
-      Nếu bạn không được tự động chuyển hướng,
-      <a href="/solar-share/">bấm vào đây</a>.
-    </p>
+    <p>Đang chuyển hướng...</p>
   </body>
 </html>
