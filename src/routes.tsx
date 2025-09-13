@@ -1,7 +1,6 @@
-// src/routes.tsx
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
-import Layout from "./components/Layout";   // File Layout
+import Layout from "./components/Layout";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -11,10 +10,10 @@ import Dashboard from "./pages/Dashboard";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,   // ✅ Layout bao ngoài
+    element: <Layout />,
     children: [
       { path: "/", element: <Home /> },
       { path: "/about", element: <About /> },
@@ -22,9 +21,7 @@ const router = createBrowserRouter([
       { path: "/projects", element: <Projects /> },
       { path: "/dashboard", element: <Dashboard /> },
       { path: "/contact", element: <Contact /> },
-      { path: "*", element: <NotFound /> }, // ✅ fallback 404
+      { path: "*", element: <NotFound /> },
     ],
   },
 ]);
-
-export default router;
