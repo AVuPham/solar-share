@@ -2,6 +2,7 @@
   "name": "solar-share",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://avupham.github.io/solar-share",  // trang web
   "type": "module",
   "scripts": {
     "dev": "vite",
