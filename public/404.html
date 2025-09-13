@@ -2,17 +2,23 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0; url=/" />
-    <title>Solar Share - 404</title>
-    <script type="text/javascript">
-      // Lấy đường dẫn hiện tại
-      const redirectTo = window.location.pathname + window.location.search + window.location.hash;
-      sessionStorage.setItem("redirect", redirectTo);
-      // Quay về index.html
-      window.location.href = "/";
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Solar Share</title>
+    <script>
+      // Khi GH Pages trả 404, file này lưu lại đường dẫn và chuyển về /
+      (function () {
+        try {
+          const redirectTo = window.location.pathname + window.location.search + window.location.hash;
+          sessionStorage.setItem("gh_redirect", redirectTo);
+        } catch (e) {
+          // ignore
+        }
+        // Chuyển về index để React Router xử lý
+        window.location.replace("/");
+      })();
     </script>
   </head>
   <body>
-    <p>Đang chuyển hướng...</p>
+    <p>Đang chuyển hướng về trang chủ…</p>
   </body>
 </html>
