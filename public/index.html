@@ -2,23 +2,14 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>404 — Solar Share</title>
-    <script>
-      // Khi GH Pages trả 404, file này lưu lại đường dẫn và chuyển về /
-      (function () {
-        try {
-          const redirectTo = window.location.pathname + window.location.search + window.location.hash;
-          sessionStorage.setItem("gh_redirect", redirectTo);
-        } catch (e) {
-          // ignore
-        }
-        // Chuyển về index để React Router xử lý
-        window.location.replace("/");
-      })();
-    </script>
+    <title>Solar Share</title>
+    <meta name="description" content="Solar Share - Dự án chia sẻ năng lượng mặt trời cho cộng đồng, sử dụng công nghệ xanh, IoT và blockchain." />
   </head>
   <body>
-    <p>Đang chuyển hướng về trang chủ…</p>
+    <div id="root"></div>
+    <!-- Vite sẽ tự inject JS bundle vào đây -->
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
