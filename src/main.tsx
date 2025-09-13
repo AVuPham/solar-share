@@ -5,7 +5,7 @@ import routes from './routes'
 import './index.css'
 
 const router = createBrowserRouter(routes, {
-  basename: "/solar-share",   // ⚡ để router chạy đúng trên GitHub Pages
+  basename: "/solar-share",  // ⚡ fix trắng trang trên GitHub Pages
 })
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
