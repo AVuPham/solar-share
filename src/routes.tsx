@@ -1,6 +1,6 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
-import App from "./App";
+import Layout from "./Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Technology from "./pages/Technology";
@@ -9,20 +9,20 @@ import Dashboard from "./pages/Dashboard";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
-const router = createBrowserRouter([
+const routes = createBrowserRouter([
   {
-    path: "/",
-    element: <App />,
+    path: "/solar-share/",
+    element: <Layout />,
     children: [
       { index: true, element: <Home /> },
       { path: "about", element: <About /> },
       { path: "technology", element: <Technology /> },
       { path: "projects", element: <Projects /> },
-      { path: "dashboard", element: <Dashboard /> }, // Quan trọng
+      { path: "dashboard", element: <Dashboard /> },
       { path: "contact", element: <Contact /> },
       { path: "*", element: <NotFound /> },
     ],
   },
 ]);
 
-export default router;
+export default routes;
