@@ -1,191 +1,202 @@
+// src/pages/Home.tsx
 import React from "react";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { FaSolarPanel, FaUsers, FaGlobe, FaRobot } from "react-icons/fa";
+import { MdOutlineAnalytics } from "react-icons/md";
+import { BsFillLightningChargeFill } from "react-icons/bs";
 
 export default function Home() {
   return (
-    <div className="space-y-24">
-      {/* Hero Section */}
-      <section className="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-green-700 via-yellow-400 to-green-600 text-white px-6">
-        <motion.h1
-          className="text-6xl font-extrabold mb-6 drop-shadow-lg"
-          initial={{ opacity: 0, y: -40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          Solar Share ☀️
-        </motion.h1>
-        <motion.p
-          className="text-lg max-w-2xl mx-auto mb-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-        >
-          Chia sẻ năng lượng, thắp sáng tương lai. <br />
-          Solar Share mang đến giải pháp kết nối cộng đồng với năng lượng tái
-          tạo – thông minh, minh bạch và bền vững.
-        </motion.p>
-        <div className="flex space-x-4">
-          <Link
-            to="/about"
-            className="px-6 py-3 bg-white text-green-700 font-semibold rounded-lg shadow hover:bg-gray-100"
+    <div className="font-sans text-gray-800">
+      {/* HERO SECTION */}
+      <section className="bg-gradient-to-r from-yellow-300 to-green-400 text-center py-20 px-6">
+        <h1 className="text-5xl font-bold text-white mb-4">
+          🌞 Solar Share – Chia sẻ năng lượng, thắp sáng tương lai
+        </h1>
+        <p className="text-lg text-white max-w-2xl mx-auto mb-6">
+          Nền tảng kết nối cộng đồng với năng lượng tái tạo – thông minh,
+          minh bạch và bền vững.
+        </p>
+        <div className="space-x-4">
+          <a
+            href="#projects"
+            className="bg-white text-green-700 px-6 py-3 rounded-lg shadow-lg font-semibold hover:bg-green-100"
           >
-            Khám phá dự án
-          </Link>
-          <Link
-            to="/contact"
-            className="px-6 py-3 bg-yellow-500 text-white font-semibold rounded-lg shadow hover:bg-yellow-600"
+            🔍 Khám phá dự án
+          </a>
+          <a
+            href="#cta"
+            className="bg-green-700 text-white px-6 py-3 rounded-lg shadow-lg font-semibold hover:bg-green-800"
           >
-            Liên hệ ngay
-          </Link>
+            🚀 Tham gia ngay
+          </a>
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center px-6">
+      {/* ABOUT SECTION */}
+      <section className="py-16 px-6 bg-white text-center lg:text-left lg:flex lg:items-center lg:justify-center lg:space-x-12">
         <img
-          src="https://source.unsplash.com/600x400/?solar,community"
-          alt="Solar Share"
-          className="rounded-xl shadow-lg"
+          src="https://img.icons8.com/fluency/240/solar-panel.png"
+          alt="Solar Panel"
+          className="w-64 mx-auto lg:mx-0"
         />
-        <div>
+        <div className="max-w-xl">
           <h2 className="text-3xl font-bold text-green-700 mb-4">
             Về Solar Share
           </h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            Solar Share không chỉ là một nền tảng công nghệ, mà còn là một{" "}
-            <b>phong trào cộng đồng</b> thúc đẩy việc sử dụng năng lượng tái
-            tạo. Chúng tôi ứng dụng AI, IoT và Blockchain để tối ưu hóa việc sản
-            xuất – phân phối – chia sẻ điện mặt trời, tạo ra một hệ sinh thái
-            năng lượng bền vững.
+          <p className="mb-3">
+            Solar Share không chỉ là công nghệ, mà còn là{" "}
+            <b>phong trào cộng đồng</b> thúc đẩy việc dùng năng lượng sạch.
           </p>
-          <p className="text-gray-700 leading-relaxed">
-            Tầm nhìn của chúng tôi là xây dựng một tương lai nơi mọi gia đình
-            đều có thể tiếp cận năng lượng sạch, giảm chi phí sinh hoạt và góp
-            phần bảo vệ môi trường.
+          <p className="mb-3">
+            Ứng dụng <b>AI, IoT, Blockchain</b> để tối ưu hóa sản xuất – phân
+            phối – chia sẻ điện mặt trời.
+          </p>
+          <p>
+            Tầm nhìn: “Tất cả mọi gia đình đều tiếp cận được năng lượng sạch,
+            giảm chi phí sinh hoạt và bảo vệ môi trường.”
           </p>
         </div>
       </section>
 
-      {/* Features */}
-      <section className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-12">Điểm nổi bật</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {[
-            {
-              icon: "🤖",
-              title: "AI Dự đoán",
-              desc: "Ứng dụng trí tuệ nhân tạo để dự đoán sản lượng điện mặt trời theo giờ nắng và thời tiết. Giúp hộ gia đình và doanh nghiệp tối ưu hiệu quả sử dụng.",
-            },
-            {
-              icon: "☁️",
-              title: "Thời tiết & IoT",
-              desc: "Tích hợp dữ liệu thời tiết và cảm biến IoT để giám sát hiệu suất pin mặt trời theo thời gian thực, cảnh báo sớm khi có sự cố.",
-            },
-            {
-              icon: "🔗",
-              title: "Blockchain & Chia sẻ",
-              desc: "Ứng dụng Blockchain để đảm bảo tính minh bạch khi giao dịch năng lượng. Người dân có thể bán – mua – chia sẻ điện mặt trời dễ dàng.",
-            },
-          ].map((f, idx) => (
-            <motion.div
-              key={idx}
-              className="p-6 bg-white shadow-lg rounded-lg text-center hover:shadow-2xl transition"
-              whileHover={{ scale: 1.05 }}
-            >
-              <div className="text-5xl mb-3">{f.icon}</div>
-              <h3 className="text-xl font-bold mb-2">{f.title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">{f.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Statistics */}
-      <section className="bg-green-50 py-16">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 text-center">
-          {[
-            { num: "200+", label: "kWh đã chia sẻ" },
-            { num: "1000+", label: "Người dùng" },
-            { num: "15+", label: "Dự án" },
-            { num: "5+", label: "Quốc gia" },
-          ].map((s, i) => (
-            <motion.div
-              key={i}
-              whileInView={{ scale: 1.1 }}
-              transition={{ duration: 0.5 }}
-            >
-              <h3 className="text-4xl font-extrabold text-green-700">
-                {s.num}
-              </h3>
-              <p className="text-gray-600 mt-2">{s.label}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Projects */}
-      <section className="max-w-6xl mx-auto py-16 px-6">
-        <h2 className="text-3xl font-bold text-center mb-12">Dự án tiêu biểu</h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          {[
-            {
-              img: "https://source.unsplash.com/400x250/?solar,village",
-              title: "Solar Village",
-              desc: "Điện mặt trời cho vùng sâu vùng xa, giảm chi phí điện, cải thiện đời sống.",
-            },
-            {
-              img: "https://source.unsplash.com/400x250/?school,energy",
-              title: "Green School",
-              desc: "Trường học xanh vận hành bằng năng lượng mặt trời, giáo dục thế hệ trẻ về năng lượng tái tạo.",
-            },
-            {
-              img: "https://source.unsplash.com/400x250/?community,solar",
-              title: "Solar For All",
-              desc: "Mạng lưới chia sẻ điện mặt trời cho các hộ gia đình thu nhập thấp.",
-            },
-            {
-              img: "https://source.unsplash.com/400x250/?city,cleanenergy",
-              title: "Smart City Solar",
-              desc: "Tích hợp điện mặt trời vào các tòa nhà đô thị thông minh.",
-            },
-          ].map((p, idx) => (
-            <motion.div
-              key={idx}
-              whileHover={{ scale: 1.03 }}
-              className="bg-white rounded-lg shadow hover:shadow-2xl overflow-hidden"
-            >
-              <img
-                src={p.img}
-                alt={p.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4">
-                <h3 className="text-xl font-bold mb-2">{p.title}</h3>
-                <p className="text-gray-600 mb-2">{p.desc}</p>
-                <Link
-                  to="/projects"
-                  className="text-green-600 hover:underline"
-                >
-                  Xem thêm →
-                </Link>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-16 bg-green-700 text-white text-center">
-        <h2 className="text-3xl font-extrabold mb-6">
-          Hãy cùng Solar Share lan tỏa năng lượng sạch 🌱
+      {/* FEATURES SECTION */}
+      <section className="py-16 px-6 bg-gray-100 text-center">
+        <h2 className="text-3xl font-bold text-green-700 mb-12">
+          Điểm nổi bật
         </h2>
-        <Link
-          to="/contact"
-          className="px-6 py-3 bg-white text-green-700 font-semibold rounded-lg shadow hover:bg-gray-200"
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="bg-white p-6 rounded-xl shadow-lg">
+            <MdOutlineAnalytics className="text-4xl text-green-600 mx-auto mb-3" />
+            <h3 className="font-semibold text-lg">Thời tiết & IoT</h3>
+            <p className="text-sm">
+              Giám sát pin mặt trời theo thời gian thực bằng IoT.
+            </p>
+          </div>
+          <div className="bg-white p-6 rounded-xl shadow-lg">
+            <FaGlobe className="text-4xl text-green-600 mx-auto mb-3" />
+            <h3 className="font-semibold text-lg">Blockchain minh bạch</h3>
+            <p className="text-sm">
+              Giao dịch năng lượng an toàn, minh bạch, đáng tin cậy.
+            </p>
+          </div>
+          <div className="bg-white p-6 rounded-xl shadow-lg">
+            <FaRobot className="text-4xl text-green-600 mx-auto mb-3" />
+            <h3 className="font-semibold text-lg">AI dự đoán</h3>
+            <p className="text-sm">
+              AI ước lượng sản lượng điện từ giờ nắng trong ngày.
+            </p>
+          </div>
+          <div className="bg-white p-6 rounded-xl shadow-lg">
+            <FaUsers className="text-4xl text-green-600 mx-auto mb-3" />
+            <h3 className="font-semibold text-lg">Cộng đồng toàn cầu</h3>
+            <p className="text-sm">
+              Kết nối hàng ngàn người dùng ở nhiều quốc gia.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* STATS SECTION */}
+      <section className="py-16 px-6 bg-green-700 text-white text-center">
+        <h2 className="text-3xl font-bold mb-10">🌍 Số liệu ấn tượng</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          <div className="bg-green-800 p-6 rounded-lg shadow">
+            <BsFillLightningChargeFill className="text-3xl mx-auto mb-2" />
+            <p className="text-2xl font-bold">200+</p>
+            <p>kWh đã chia sẻ</p>
+          </div>
+          <div className="bg-green-800 p-6 rounded-lg shadow">
+            <FaUsers className="text-3xl mx-auto mb-2" />
+            <p className="text-2xl font-bold">1000+</p>
+            <p>Người dùng</p>
+          </div>
+          <div className="bg-green-800 p-6 rounded-lg shadow">
+            <FaSolarPanel className="text-3xl mx-auto mb-2" />
+            <p className="text-2xl font-bold">15+</p>
+            <p>Dự án</p>
+          </div>
+          <div className="bg-green-800 p-6 rounded-lg shadow">
+            <FaGlobe className="text-3xl mx-auto mb-2" />
+            <p className="text-2xl font-bold">5+</p>
+            <p>Quốc gia</p>
+          </div>
+        </div>
+      </section>
+
+      {/* PROJECTS SECTION */}
+      <section id="projects" className="py-16 px-6 bg-gray-100 text-center">
+        <h2 className="text-3xl font-bold text-green-700 mb-12">
+          Dự án tiêu biểu
+        </h2>
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="bg-white rounded-xl shadow-lg p-6">
+            <img
+              src="https://img.icons8.com/color/200/school-building.png"
+              alt="Green School"
+              className="mx-auto mb-4"
+            />
+            <h3 className="text-xl font-semibold mb-2">Green School</h3>
+            <p className="text-sm">
+              Trường học xanh vận hành bằng năng lượng mặt trời, giáo dục thế hệ
+              trẻ.
+            </p>
+            <a
+              href="#"
+              className="text-green-600 font-semibold hover:underline mt-3 inline-block"
+            >
+              Xem thêm →
+            </a>
+          </div>
+          <div className="bg-white rounded-xl shadow-lg p-6">
+            <img
+              src="https://img.icons8.com/color/200/family.png"
+              alt="Solar For All"
+              className="mx-auto mb-4"
+            />
+            <h3 className="text-xl font-semibold mb-2">Solar For All</h3>
+            <p className="text-sm">
+              Mạng lưới chia sẻ điện mặt trời cho các hộ gia đình thu nhập thấp.
+            </p>
+            <a
+              href="#"
+              className="text-green-600 font-semibold hover:underline mt-3 inline-block"
+            >
+              Xem thêm →
+            </a>
+          </div>
+          <div className="bg-white rounded-xl shadow-lg p-6">
+            <img
+              src="https://img.icons8.com/color/200/city.png"
+              alt="Smart City Solar"
+              className="mx-auto mb-4"
+            />
+            <h3 className="text-xl font-semibold mb-2">Smart City Solar</h3>
+            <p className="text-sm">
+              Tích hợp điện mặt trời vào các tòa nhà đô thị thông minh.
+            </p>
+            <a
+              href="#"
+              className="text-green-600 font-semibold hover:underline mt-3 inline-block"
+            >
+              Xem thêm →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA SECTION */}
+      <section
+        id="cta"
+        className="py-20 px-6 bg-gradient-to-r from-green-500 to-yellow-400 text-center text-white"
+      >
+        <h2 className="text-4xl font-bold mb-6">
+          🌞 Hãy cùng Solar Share lan tỏa năng lượng sạch!
+        </h2>
+        <a
+          href="#"
+          className="bg-white text-green-700 px-6 py-3 rounded-lg shadow-lg font-semibold hover:bg-green-100"
         >
-          Tham gia ngay
-        </Link>
+          🚀 Tham gia ngay
+        </a>
       </section>
     </div>
   );
