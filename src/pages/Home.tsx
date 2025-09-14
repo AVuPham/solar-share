@@ -1,92 +1,136 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <div className="space-y-20">
-      {/* Hero */}
-      <section className="text-center py-20 bg-gradient-to-r from-sky-600 to-green-500 text-white rounded-lg shadow-lg">
+    <div className="space-y-16">
+      {/* Hero Section */}
+      <section className="text-center py-20 bg-gradient-to-r from-green-600 to-yellow-400 text-white">
         <h1 className="text-5xl font-extrabold mb-6">
-          Solar Share – Chia sẻ năng lượng, kết nối cộng đồng
+          Solar Share – Năng lượng tái tạo cho cộng đồng
         </h1>
-        <p className="text-xl mb-8 max-w-3xl mx-auto">
-          Nền tảng năng lượng tái tạo kết hợp IoT, AI và Blockchain, giúp mọi người dễ dàng sản xuất,
-          chia sẻ và sử dụng điện mặt trời minh bạch, an toàn và bền vững.
+        <p className="text-lg max-w-2xl mx-auto mb-6">
+          Kết nối công nghệ AI, IoT và Blockchain để dự đoán, tối ưu và chia sẻ
+          năng lượng mặt trời.
         </p>
         <Link
           to="/about"
-          className="px-8 py-4 bg-white text-sky-700 font-semibold rounded-lg shadow hover:bg-gray-100"
+          className="px-6 py-3 bg-white text-green-700 rounded-lg font-semibold hover:bg-gray-200"
         >
-          Tìm hiểu thêm
+          Khám phá dự án
         </Link>
       </section>
 
-      {/* Tầm nhìn & Sứ mệnh */}
-      <section className="max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-sky-700 mb-6">Tầm nhìn & Sứ mệnh</h2>
-        <p className="text-gray-700 leading-relaxed mb-4">
-          Chúng tôi tin rằng năng lượng sạch không chỉ dành cho một số ít người có điều kiện, 
-          mà phải trở thành quyền lợi cơ bản cho mọi cộng đồng.
-        </p>
-        <p className="text-gray-700 leading-relaxed">
-          Solar Share hướng tới việc xây dựng một hệ sinh thái năng lượng mở, minh bạch và công bằng, 
-          nơi mọi người đều có thể tham gia vào chuỗi giá trị năng lượng xanh.
-        </p>
-      </section>
-
-      {/* Lợi ích chính */}
+      {/* Features */}
       <section className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-center">
-        <div className="p-6 bg-white shadow rounded-lg">
-          <h3 className="text-xl font-semibold text-sky-600 mb-2">Cho Cộng đồng</h3>
-          <p className="text-gray-700">
-            Cung cấp nguồn điện ổn định, giảm chi phí sinh hoạt, và nâng cao ý thức bảo vệ môi trường.
+        <div className="p-6 shadow-lg rounded-lg bg-white">
+          <span className="text-5xl">⚡</span>
+          <h2 className="text-xl font-bold mt-4 mb-2">AI Dự đoán</h2>
+          <p>
+            Sử dụng trí tuệ nhân tạo để dự đoán sản lượng điện mặt trời theo dữ
+            liệu thời tiết.
           </p>
         </div>
-        <div className="p-6 bg-white shadow rounded-lg">
-          <h3 className="text-xl font-semibold text-sky-600 mb-2">Cho Doanh nghiệp</h3>
-          <p className="text-gray-700">
-            Giảm chi phí vận hành, tăng uy tín thương hiệu xanh và mở ra cơ hội kinh doanh bền vững.
+        <div className="p-6 shadow-lg rounded-lg bg-white">
+          <span className="text-5xl">☁️</span>
+          <h2 className="text-xl font-bold mt-4 mb-2">Dữ liệu thời tiết</h2>
+          <p>
+            Kết nối trực tiếp với API thời tiết để đưa ra thông tin chính xác
+            theo từng khu vực.
           </p>
         </div>
-        <div className="p-6 bg-white shadow rounded-lg">
-          <h3 className="text-xl font-semibold text-sky-600 mb-2">Cho Môi trường</h3>
-          <p className="text-gray-700">
-            Giảm phát thải CO₂, bảo vệ tài nguyên thiên nhiên và góp phần chống biến đổi khí hậu.
+        <div className="p-6 shadow-lg rounded-lg bg-white">
+          <span className="text-5xl">🌍</span>
+          <h2 className="text-xl font-bold mt-4 mb-2">Chia sẻ cộng đồng</h2>
+          <p>
+            Mô hình chia sẻ năng lượng sạch, giúp cộng đồng cùng hưởng lợi từ
+            nguồn tài nguyên xanh.
           </p>
         </div>
       </section>
 
-      {/* Các con số nổi bật */}
-      <section className="bg-sky-50 py-12">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-center">
+      {/* Statistics */}
+      <section className="bg-green-50 py-16 text-center">
+        <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-4xl font-bold text-sky-700">+10.000</h3>
-            <p className="text-gray-600">Hộ gia đình tham gia</p>
+            <h3 className="text-4xl font-bold text-green-700">100+</h3>
+            <p className="text-gray-700">kWh được chia sẻ</p>
           </div>
           <div>
-            <h3 className="text-4xl font-bold text-sky-700">50.000 MWh</h3>
-            <p className="text-gray-600">Điện sạch được tạo ra</p>
+            <h3 className="text-4xl font-bold text-green-700">500+</h3>
+            <p className="text-gray-700">Hộ gia đình hưởng lợi</p>
           </div>
           <div>
-            <h3 className="text-4xl font-bold text-sky-700">120.000 tấn</h3>
-            <p className="text-gray-600">CO₂ được cắt giảm</p>
+            <h3 className="text-4xl font-bold text-green-700">10+</h3>
+            <p className="text-gray-700">Dự án triển khai</p>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="text-center py-16">
-        <h2 className="text-3xl font-bold text-sky-700 mb-4">Bạn đã sẵn sàng tham gia?</h2>
-        <p className="text-gray-700 mb-6">
-          Cùng Solar Share tạo dựng tương lai xanh, bắt đầu từ hôm nay!
-        </p>
+      {/* Projects Preview */}
+      <section className="max-w-6xl mx-auto py-16">
+        <h2 className="text-3xl font-bold text-center mb-8">Dự án nổi bật</h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="bg-white shadow-lg rounded-lg p-4">
+            <img
+              src="https://source.unsplash.com/400x250/?solar"
+              alt="Project 1"
+              className="rounded-lg mb-4"
+            />
+            <h3 className="text-xl font-bold mb-2">Solar Village</h3>
+            <p>
+              Cung cấp điện mặt trời cho làng quê vùng núi, giảm chi phí điện và
+              bảo vệ môi trường.
+            </p>
+            <Link to="/projects" className="text-green-600 hover:underline">
+              Xem thêm →
+            </Link>
+          </div>
+          <div className="bg-white shadow-lg rounded-lg p-4">
+            <img
+              src="https://source.unsplash.com/400x250/?renewable"
+              alt="Project 2"
+              className="rounded-lg mb-4"
+            />
+            <h3 className="text-xl font-bold mb-2">Green School</h3>
+            <p>
+              Trường học xanh sử dụng năng lượng mặt trời, giáo dục học sinh về
+              bảo vệ môi trường.
+            </p>
+            <Link to="/projects" className="text-green-600 hover:underline">
+              Xem thêm →
+            </Link>
+          </div>
+          <div className="bg-white shadow-lg rounded-lg p-4">
+            <img
+              src="https://source.unsplash.com/400x250/?energy"
+              alt="Project 3"
+              className="rounded-lg mb-4"
+            />
+            <h3 className="text-xl font-bold mb-2">Solar For All</h3>
+            <p>
+              Mạng lưới chia sẻ năng lượng mặt trời cho các hộ gia đình có thu
+              nhập thấp.
+            </p>
+            <Link to="/projects" className="text-green-600 hover:underline">
+              Xem thêm →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Call To Action */}
+      <section className="py-20 text-center bg-green-700 text-white">
+        <h2 className="text-3xl font-bold mb-6">
+          Hãy cùng Solar Share lan tỏa năng lượng sạch
+        </h2>
         <Link
-          to="/projects"
-          className="px-8 py-4 bg-sky-600 text-white font-semibold rounded-lg shadow hover:bg-sky-700"
+          to="/contact"
+          className="px-6 py-3 bg-white text-green-700 rounded-lg font-semibold hover:bg-gray-200"
         >
-          Xem các dự án
+          Tham gia ngay
         </Link>
       </section>
     </div>
-  )
+  );
 }
