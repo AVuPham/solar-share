@@ -2,13 +2,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function NotFound() {
+export default function NotFound(): JSX.Element {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
-      <h1 className="text-6xl font-bold text-sky-700 mb-4">404</h1>
-      <p className="mb-6 text-gray-700">Trang bạn tìm không tồn tại.</p>
-      <Link to="/" className="text-white bg-sky-600 px-4 py-2 rounded-md hover:bg-sky-700">
-        Quay lại trang chủ
+    <div style={{ textAlign: "center", padding: "6rem 1rem" }}>
+      <h1 style={{ fontSize: 96, margin: 0, color: "#0ea5a4" }}>404</h1>
+      <p style={{ fontSize: 18, color: "#334155", marginTop: 12 }}>Trang bạn tìm không tồn tại hoặc đã bị di chuyển.</p>
+      <Link to="/" style={{ display: "inline-block", marginTop: 20, padding: "10px 18px", background: "#0369a1", color: "#fff", borderRadius: 8, textDecoration: "none" }}>
+        Quay về trang chủ
       </Link>
     </div>
   );
