@@ -1,6 +1,6 @@
 // src/pages/Home.tsx
 import React from "react";
-import { FaSun, FaLeaf, FaRolt, FaChartLine, FaUsers } from "react-icons/fa";
+import { FaSun, FaLeaf, FaRolt, FaChartLine, FaUsers } from "react-icons/fa6";
 import { MdOutlineAnalytics } from "react-icons/md";
 import { BsFillLightningChargeFill } from "react-icons/bs";
 
