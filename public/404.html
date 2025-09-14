@@ -3,13 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <title>Redirecting...</title>
-    <meta http-equiv="refresh" content="0; url=/solar-share/" />
   </head>
   <body>
     <script>
-      // Lấy path hiện tại (sau /solar-share/)
       var path = window.location.pathname.replace("/solar-share", "");
-      // Chuyển hướng về index.html nhưng giữ nguyên path bằng hash
       var redirectTo =
         window.location.protocol +
         "//" +
