@@ -1,10 +1,8 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: '/solar-share/', // 👈 đúng với repo name
-  build: {
-    outDir: 'dist'
-  }
-})
+  // ⚡ Quan trọng: tên repo của bạn (solar-share)
+  base: "/solar-share/",
+});
