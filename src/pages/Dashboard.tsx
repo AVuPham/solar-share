@@ -1,8 +1,21 @@
 import React, { useState } from "react";
 import * as tf from "@tensorflow/tfjs";
 import { Line } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  LineElement,
+  PointElement,
+  LinearScale,
+  CategoryScale,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
 
-const API_KEY = "1cabc342b94a9cb8add0a5a91563125e"; // ⚠️ API key
+// Đăng ký Chart.js
+ChartJS.register(LineElement, PointElement, LinearScale, CategoryScale, Title, Tooltip, Legend);
+
+const API_KEY = "1cabc342b94a9cb8add0a5a91563125e"; // ⚠️ API key của bạn
 
 // Hàm AI dự đoán kWh từ số giờ nắng
 const predictSolar = async (sunHours: number) => {
@@ -56,7 +69,8 @@ export default function Dashboard() {
         label: "Sản lượng mẫu (kWh)",
         data: [2, 3.2, 4.1, 5.5, 6.7, 7.5, 9],
         borderColor: "rgba(34,197,94,1)",
-        fill: false,
+        backgroundColor: "rgba(34,197,94,0.2)",
+        fill: true,
       },
     ],
   };
