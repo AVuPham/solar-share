@@ -1,15 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
-import Layout from "./Layout";
-import Dashboard from "./pages/Dashboard";
+import App from "./App";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <App />,
+    },
+  ],
   {
-    path: "/",
-    element: <Layout />,
-    children: [
-      { path: "/", element: <Dashboard /> },
-    ],
-  },
-]);
+    basename: "/solar-share", // 🔥 quan trọng
+  }
+);
 
 export default router;
