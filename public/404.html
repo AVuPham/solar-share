@@ -1,51 +1,24 @@
-<!doctype html>
-<html lang="vi">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>404 — Solar Share</title>
-  <style>body{font-family:system-ui;padding:40px;text-align:center;background:#f8fafc}</style>
-</head>
-<body>
-  <h1>404 — Trang không tìm thấy</h1>
-  <p>Đang chuyển hướng về ứng dụng...</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <meta http-equiv="refresh" content="0; url=/solar-share/" />
+  </head>
+  <body>
+    <script>
+      // Lấy path hiện tại (sau /solar-share/)
+      var path = window.location.pathname.replace("/solar-share", "");
+      // Chuyển hướng về index.html nhưng giữ nguyên path bằng hash
+      var redirectTo =
+        window.location.protocol +
+        "//" +
+        window.location.host +
+        "/solar-share/#" +
+        path +
+        window.location.search;
 
-  <script>
-    (function () {
-      // Nếu bạn deploy ở https://<user>.github.io/<repo>/ thì BASE = '/<repo>/'
-      var BASE = '/solar-share/'; // <-- đổi nếu repo khác
-      try {
-        // lưu đường dẫn gốc để React Router xử lý sau khi tải index.html
-        sessionStorage.setItem('gh_redirect', location.pathname + location.search + location.hash);
-      } catch (e) {}
-      // Thử tải index.html từ base và inject body/head (fallback nếu trang con)
-      fetch(BASE + 'index.html', { cache: 'no-store' })
-        .then(function (r) {
-          if (!r.ok) throw new Error('index not found');
-          return r.text();
-        })
-        .then(function (html) {
-          var parser = new DOMParser();
-          var doc = parser.parseFromString(html, 'text/html');
-          // copy styles
-          doc.querySelectorAll('link[rel="stylesheet"], style').forEach(function (n) {
-            document.head.appendChild(n.cloneNode(true));
-          });
-          // replace body
-          document.body.innerHTML = doc.body.innerHTML;
-          // run scripts (inline or src)
-          doc.querySelectorAll('script').forEach(function (s) {
-            var ns = document.createElement('script');
-            if (s.src) ns.src = s.src;
-            else ns.text = s.textContent;
-            document.body.appendChild(ns);
-          });
-        })
-        .catch(function () {
-          // nếu lỗi: redirect về base
-          window.location.replace(BASE);
-        });
-    })();
-  </script>
-</body>
+      window.location.replace(redirectTo);
+    </script>
+  </body>
 </html>
