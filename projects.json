@@ -1,0 +1,17 @@
+[
+  {
+    "id": "p1",
+    "title": "Solar Share Hà Nội",
+    "desc": "Lắp đặt 30kW cho cộng đồng, giảm 25 tấn CO₂/năm."
+  },
+  {
+    "id": "p2",
+    "title": "Solar Share Đà Nẵng",
+    "desc": "Hệ thống điện mặt trời hộ gia đình, tiết kiệm 40% chi phí điện."
+  },
+  {
+    "id": "p3",
+    "title": "Solar Share Cần Thơ",
+    "desc": "Dự án cộng đồng 50kW kết hợp pin lưu trữ năng lượng."
+  }
+]
