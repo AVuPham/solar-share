@@ -13,13 +13,13 @@ jobs:
         run: |
           echo "⏱ Pinging Supabase via RPC ping_now..."
 
-          curl -s \
+          RESPONSE=$(curl -s \
             -H "apikey: ${{ secrets.SUPABASE_KEY }}" \
             -H "Authorization: Bearer ${{ secrets.SUPABASE_KEY }}" \
             -H "Content-Type: application/json" \
             -X POST \
             -d '{}' \
-            "${{ secrets.SUPABASE_URL }}/rest/v1/rpc/ping_now" \
-            -o /dev/null
+            "${{ secrets.SUPABASE_URL }}/rest/v1/rpc/ping_now")
 
+          echo "📡 Supabase response: $RESPONSE"
           echo "✅ Ping sent successfully! Project Solar Share remains active."
