@@ -1,0 +1,25 @@
+name: Keep Supabase Active
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"  # chạy mỗi 6 giờ
+  workflow_dispatch:
+
+jobs:
+  ping-supabase:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase DB (SELECT 1)
+        run: |
+          echo "⏱ Pinging Supabase to keep project active..."
+
+          curl -s \
+            -H "apikey: ${{ secrets.SUPABASE_KEY }}" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_KEY }}" \
+            -H "Content-Type: application/json" \
+            -X POST \
+            -d '{"query": "SELECT 1;"}' \
+            "${{ secrets.SUPABASE_URL }}/rest/v1/rpc" \
+            -o /dev/null
+
+          echo "✅ Ping sent successfully! Project Solar Share remains active."
