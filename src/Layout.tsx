@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaFacebook, FaTwitter, FaLinkedin, FaBars, FaTimes } from "react-icons/fa";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const location = useLocation();
 
   const navItems = [
@@ -20,12 +20,20 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* HEADER */}
       <header className="bg-gradient-to-r from-green-600 to-yellow-500 text-white shadow-lg">
         <div className="max-w-7xl mx-auto flex justify-between items-center p-4">
-          <Link to="/" className="text-2xl font-extrabold tracking-wide">🌞 Solar Share</Link>
+          <Link to="/" className="text-2xl font-extrabold tracking-wide">
+            🌞 Solar Share
+          </Link>
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex space-x-6 font-semibold">
             {navItems.map((item) => (
-              <Link key={item.path} to={item.path} className="hover:text-black transition">
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`hover:text-black transition ${
+                  location.pathname === item.path ? "underline text-black" : ""
+                }`}
+              >
                 {item.label}
               </Link>
             ))}
@@ -44,7 +52,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Link
                 key={item.path}
                 to={item.path}
-                className="block text-white font-medium hover:text-yellow-300"
+                className={`block text-white font-medium hover:text-yellow-300 ${
+                  location.pathname === item.path ? "underline" : ""
+                }`}
                 onClick={() => setOpen(false)}
               >
                 {item.label}
@@ -63,7 +73,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div>
             <h2 className="text-2xl font-bold mb-3">🌞 Solar Share</h2>
             <p className="text-gray-200 leading-relaxed">
-              Solar Share mang đến <b>giải pháp năng lượng xanh</b> – bền vững và thân thiện môi trường.
+              Solar Share mang đến <b>giải pháp năng lượng xanh</b> – bền vững và thân thiện môi
+              trường.
             </p>
           </div>
           <div>
@@ -71,7 +82,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <ul className="space-y-2">
               {navItems.map((item) => (
                 <li key={item.path}>
-                  <Link to={item.path} className="hover:text-black transition">{item.label}</Link>
+                  <Link
+                    to={item.path}
+                    className="hover:text-black transition"
+                  >
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -83,7 +99,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <a href="#"><FaTwitter /></a>
               <a href="#"><FaLinkedin /></a>
             </div>
-            <p className="mt-4 text-gray-200 text-sm">© 2025 Solar Share</p>
+            <p className="mt-4 text-gray-200 text-sm">© {new Date().getFullYear()} Solar Share</p>
           </div>
         </div>
       </footer>
