@@ -79,7 +79,7 @@ export default function Home() {
           minh bạch và bền vững cho mọi người.
         </p>
         <a
-          href="/projects"
+          href="/solar-share/projects"
           className="bg-white text-green-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
         >
           Khám phá Dự án
