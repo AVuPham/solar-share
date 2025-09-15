@@ -1,11 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { RouterProvider } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import routes from "./routes";
 import "./index.css";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+const router = createBrowserRouter(routes, {
+  basename: "/solar-share",
+});
+
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={routes} />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
