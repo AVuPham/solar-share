@@ -19,9 +19,9 @@ export default function Home() {
           🌞 Solar Share
         </h1>
         <p className="text-xl max-w-4xl mx-auto leading-relaxed font-light">
-          Hệ sinh thái <b>năng lượng mặt trời thông minh</b>, tích hợp{" "}
-          <b>AI, IoT và Blockchain</b>, mang lại nguồn năng lượng minh bạch, bền
-          vững và thân thiện môi trường cho toàn cầu.
+          Nền tảng <b>chia sẻ năng lượng mặt trời</b> kết hợp{" "}
+          <b>AI, IoT & Blockchain</b>, mang đến giải pháp minh bạch, bền vững và
+          thân thiện với môi trường cho cộng đồng toàn cầu.
         </p>
         <div className="mt-10 space-x-6">
           <Link
@@ -47,8 +47,8 @@ export default function Home() {
             Công nghệ tiên tiến
           </h3>
           <p className="text-gray-600 leading-relaxed">
-            Ứng dụng <b>AI & IoT</b> để tối ưu sản lượng điện mặt trời, dự báo
-            thông minh và theo dõi thời gian thực.
+            Ứng dụng <b>AI & IoT</b> để dự báo, tối ưu và quản lý sản lượng
+            điện mặt trời theo thời gian thực.
           </p>
         </div>
 
@@ -58,8 +58,8 @@ export default function Home() {
             Bền vững & Xanh
           </h3>
           <p className="text-gray-600 leading-relaxed">
-            Giảm phát thải <b>CO₂</b>, bảo vệ hành tinh và hướng đến mục tiêu{" "}
-            <b>Net-Zero</b> cho cộng đồng toàn cầu.
+            Góp phần giảm phát thải <b>CO₂</b>, hướng đến mục tiêu{" "}
+            <b>Net-Zero</b>, xây dựng một hành tinh xanh cho thế hệ tương lai.
           </p>
         </div>
 
@@ -69,52 +69,47 @@ export default function Home() {
             Cộng đồng chia sẻ
           </h3>
           <p className="text-gray-600 leading-relaxed">
-            Mọi người đều có thể tham gia: từ <b>hộ gia đình</b>,{" "}
-            <b>doanh nghiệp</b> đến <b>nhà đầu tư</b> quốc tế.
+            Kết nối <b>hộ gia đình</b>, <b>doanh nghiệp</b> và{" "}
+            <b>nhà đầu tư quốc tế</b> trong cùng một nền tảng minh bạch.
           </p>
         </div>
       </section>
 
       {/* GIỚI THIỆU CHI TIẾT */}
-      <section className="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h2 className="text-4xl font-extrabold text-green-700 mb-6">
-            🌍 Tương lai năng lượng toàn cầu
-          </h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            Với Solar Share, năng lượng mặt trời không chỉ là nguồn điện – mà là{" "}
-            <b>hệ sinh thái thông minh</b> kết nối mọi người, minh bạch hóa dữ
-            liệu và phân bổ công bằng lợi ích.
-          </p>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            Chúng tôi tạo ra <b>giải pháp toàn diện</b> từ dự đoán sản lượng,
-            chia sẻ năng lượng dư thừa, cho đến việc gọi vốn cộng đồng trên nền
-            tảng Blockchain.
-          </p>
-          <Link
-            to="/technology"
-            className="inline-block mt-6 bg-green-600 text-white px-8 py-4 rounded-xl font-bold shadow hover:bg-green-700 transition"
-          >
-            🔧 Xem Công nghệ
-          </Link>
-        </div>
-        <div>
-          <img
-            src="https://images.unsplash.com/photo-1509395176047-4a66953fd231"
-            alt="Solar Panels"
-            className="rounded-2xl shadow-2xl"
-          />
-        </div>
+      <section className="bg-white shadow-lg rounded-2xl p-12 space-y-6">
+        <h2 className="text-4xl font-extrabold text-green-700 text-center">
+          🌍 Vì sao chọn Solar Share?
+        </h2>
+        <p className="text-gray-700 leading-relaxed text-lg text-center max-w-4xl mx-auto">
+          Solar Share không chỉ là giải pháp năng lượng, mà là{" "}
+          <b>hệ sinh thái thông minh</b>.  
+          Chúng tôi giúp cộng đồng cùng nhau khai thác, phân bổ và chia sẻ năng
+          lượng mặt trời với sự minh bạch tuyệt đối.
+        </p>
+        <ul className="grid md:grid-cols-2 gap-6 text-gray-700 text-lg">
+          <li className="p-6 bg-gray-50 rounded-xl shadow">
+            🔎 Dự báo chính xác sản lượng bằng AI.
+          </li>
+          <li className="p-6 bg-gray-50 rounded-xl shadow">
+            📊 Theo dõi minh bạch bằng công nghệ Blockchain.
+          </li>
+          <li className="p-6 bg-gray-50 rounded-xl shadow">
+            ⚡ Tối ưu lưu trữ và phân phối bằng IoT.
+          </li>
+          <li className="p-6 bg-gray-50 rounded-xl shadow">
+            🤝 Gọi vốn cộng đồng để phát triển dự án năng lượng xanh.
+          </li>
+        </ul>
       </section>
 
       {/* THỐNG KÊ / IMPACT */}
       <section className="bg-gradient-to-r from-green-700 to-green-500 text-white py-16 rounded-2xl shadow-xl text-center">
-        <h2 className="text-4xl font-bold mb-8">📊 Tác động toàn cầu</h2>
+        <h2 className="text-4xl font-bold mb-10">📊 Tác động toàn cầu</h2>
         <div className="grid md:grid-cols-4 gap-10">
           <div>
             <FaBolt className="text-5xl mx-auto mb-3" />
             <h3 className="text-2xl font-bold">+50MW</h3>
-            <p>Điện mặt trời đã sản xuất</p>
+            <p>Điện mặt trời sản xuất</p>
           </div>
           <div>
             <FaGlobe className="text-5xl mx-auto mb-3" />
@@ -135,42 +130,32 @@ export default function Home() {
       </section>
 
       {/* HỢP TÁC */}
-      <section className="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <img
-            src="https://images.unsplash.com/photo-1581091215367-59ab6b29c7b6"
-            alt="Partnership"
-            className="rounded-2xl shadow-2xl"
-          />
-        </div>
-        <div>
-          <h2 className="text-4xl font-extrabold text-green-700 mb-6">
-            🤝 Hợp tác chiến lược
-          </h2>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            Solar Share hợp tác cùng các tổ chức quốc tế, chính phủ và doanh
-            nghiệp để xây dựng <b>giải pháp năng lượng bền vững</b>.
-          </p>
-          <p className="text-gray-700 leading-relaxed mb-4">
-            Chúng tôi tin rằng, chỉ với sự kết nối toàn cầu, chúng ta mới có thể
-            tạo nên <b>tương lai Net-Zero</b> thực sự.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-block mt-6 bg-yellow-500 text-white px-8 py-4 rounded-xl font-bold shadow hover:bg-yellow-600 transition"
-          >
-            📩 Liên hệ hợp tác
-          </Link>
-        </div>
+      <section className="bg-white shadow-lg rounded-2xl p-12 text-center space-y-6">
+        <FaHandshake className="text-6xl text-green-600 mx-auto mb-4" />
+        <h2 className="text-4xl font-extrabold text-green-700">
+          🤝 Hợp tác chiến lược
+        </h2>
+        <p className="text-gray-700 leading-relaxed max-w-4xl mx-auto text-lg">
+          Solar Share hợp tác cùng <b>tổ chức quốc tế</b>, <b>chính phủ</b> và{" "}
+          <b>doanh nghiệp</b> để mở rộng năng lượng sạch.  
+          Chúng tôi tin rằng, chỉ khi kết nối toàn cầu, chúng ta mới có thể tạo
+          nên <b>tương lai Net-Zero</b>.
+        </p>
+        <Link
+          to="/contact"
+          className="inline-block mt-4 bg-yellow-500 text-white px-10 py-4 rounded-xl font-bold text-lg shadow hover:bg-yellow-600 transition"
+        >
+          📩 Liên hệ hợp tác
+        </Link>
       </section>
 
       {/* CTA CUỐI */}
       <section className="bg-gradient-to-r from-yellow-400 to-green-500 text-white py-20 text-center rounded-2xl shadow-2xl">
         <h2 className="text-4xl font-extrabold mb-6 drop-shadow-lg">
-          Tham gia cùng Solar Share 🌞
+          Hãy tham gia cùng Solar Share 🌞
         </h2>
         <p className="max-w-3xl mx-auto mb-8 text-lg leading-relaxed">
-          Hãy cùng chúng tôi lan tỏa năng lượng sạch – cho{" "}
+          Cùng nhau, chúng ta có thể lan tỏa năng lượng sạch – cho{" "}
           <b>cộng đồng, doanh nghiệp và hành tinh</b>.  
           Solar Share luôn sẵn sàng hợp tác và phát triển cùng bạn.
         </p>
